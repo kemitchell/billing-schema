@@ -11,7 +11,7 @@
   "tags": [ "structuring", "governance" ],
   "service": [
     { "time": 1.25,
-      "date": "2015-06-27 08:00",
+      "date": "2015-06-27",
       "rate": 300,
       "narrative": [ "prepared incorporation documents" ],
       "adjustment": -10.5 } ] }
