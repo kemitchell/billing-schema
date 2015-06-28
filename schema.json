@@ -1,6 +1,7 @@
 { "oneOf": [
 
-    { "type": "object",
+    { "title": "hourly billing project",
+      "type": "object",
       "properties": {
         "approval": { "$ref": "#/definitions/approval" },
         "client": { "$ref": "#/definitions/client" },
@@ -15,7 +16,8 @@
         "project", "tags", "service" ],
       "additionalProperties": false },
 
-    { "type": "object",
+    { "title": "estimated project",
+      "type": "object",
       "properties": {
         "approval": { "$ref": "#/definitions/approval" },
         "client": { "$ref": "#/definitions/client" },
@@ -34,6 +36,7 @@
   "definitions": {
 
     "approval": {
+      "title": "project approval",
       "properties": {
         "by": { "type": "string" },
         "date": { "type": "string", "format": "date-time" },
@@ -46,25 +49,33 @@
     "client": { "type": "string" },
 
     "contacts": {
+      "title": "project contacts",
+      "description": "client personnel involved in the project",
       "type": "array",
       "items": { "type": "string" },
       "minItems": 1,
       "uniqueItems": true },
 
     "parties": {
+      "title": "counterparties",
       "type": "array",
       "items": { "type": "string" },
       "uniqueItems": true},
 
-    "project": { "type": "string" },
+    "project": {
+      "title": "project title",
+      "type": "string" },
 
     "tags": {
+      "title": "project metadata tags",
       "type": "array",
       "items": { "type": "string" },
       "minItems": 1,
       "uniqueItems": true },
 
-    "timeEntry": {
+    "totalTimeEntry": {
+      "title": "total time entry",
+      "description": "entry of total time served",
       "type": "object",
       "properties": {
         "adjustment": { "$ref": "#/definitions/adjustment" },
@@ -80,6 +91,8 @@
       "additionalProperties": false },
 
     "startEndEntry": {
+      "title": "time span entry",
+      "description": "entry of a span of time served",
       "type": "object",
       "properties": {
         "adjustment": { "$ref": "#/definitions/adjustment" },
@@ -91,22 +104,33 @@
       "required": [ "end", "narrative", "rate", "start" ],
       "additionalProperties": false },
 
-    "adjustment": { "type": "number", "multipleOf": 0.25 },
+    "adjustment": {
+      "title": "time entry manual adjustment",
+      "type": "number",
+      "multipleOf": 0.25 },
 
-    "bill": { "type": "boolean" },
+    "bill": {
+      "description": "whether to bill for an entry",
+      "type": "boolean" },
 
     "narrative": {
+      "title": "narrative",
+      "description": "list of tasks performed",
       "type": "array",
       "items": { "type": "string" },
       "minItems": 1,
       "uniqueItems": true },
 
-    "rate": { "type": "integer", "minimum": 1 },
+    "rate": {
+      "title": "billing rate",
+      "type": "integer",
+      "minimum": 1 },
 
     "service": {
+      "title": "list of service entries",
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "#/definitions/timeEntry" },
+          { "$ref": "#/definitions/totalTimeEntry" },
           { "$ref": "#/definitions/startEndEntry" } ] },
       "minItems": 1 } } }
