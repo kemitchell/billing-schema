@@ -10,11 +10,11 @@
         "method": { "enum": [ "hourly" ] },
         "parties": { "$ref": "#/definitions/parties" },
         "project": { "$ref": "#/definitions/project" },
-        "tags": { "$ref": "#/definitions/tags" },
-        "service": { "$ref": "#/definitions/service" } },
+        "service": { "$ref": "#/definitions/service" },
+        "tags": { "$ref": "#/definitions/tags" } },
       "required": [
         "approval", "client", "contacts", "method", "parties",
-        "project", "tags", "service" ],
+        "project", "service", "tags" ],
       "additionalProperties": false },
 
     { "title": "estimated project",
@@ -28,11 +28,11 @@
         "method": { "enum": [ "estimate" ] },
         "parties": { "$ref": "#/definitions/parties" },
         "project": { "$ref": "#/definitions/project" },
-        "tags": { "$ref": "#/definitions/tags" },
-        "service": { "$ref": "#/definitions/service" } },
+        "service": { "$ref": "#/definitions/service" },
+        "tags": { "$ref": "#/definitions/tags" } },
       "required": [
         "approval", "client", "contacts", "method", "parties",
-        "project", "tags", "service" ],
+        "project", "service", "tags" ],
       "additionalProperties": false } ],
 
   "definitions": {
@@ -94,7 +94,7 @@
           "type": "number",
           "multipleOf": 0.25,
           "minimum": 0.25 } },
-      "required": [ "date", "rate", "time", "narrative" ],
+      "required": [ "date", "narrative", "rate", "time" ],
       "additionalProperties": false },
 
     "startEndEntry": {
@@ -138,6 +138,6 @@
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "#/definitions/totalTimeEntry" },
-          { "$ref": "#/definitions/startEndEntry" } ] },
+          { "$ref": "#/definitions/startEndEntry" },
+          { "$ref": "#/definitions/totalTimeEntry" } ] },
       "minItems": 1 } } }
