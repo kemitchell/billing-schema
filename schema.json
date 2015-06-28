@@ -17,8 +17,8 @@
           "$ref": "#/definitions/project" },
         "tags": {
           "$ref": "#/definitions/tags" },
-        "work": {
-          "$ref": "#/definitions/work" } },
+        "service": {
+          "$ref": "#/definitions/service" } },
       "required": [
         "approval",
         "client",
@@ -27,7 +27,7 @@
         "parties",
         "project",
         "tags",
-        "work" ],
+        "service" ],
       "additionalProperties": false },
 
     { "type": "object",
@@ -50,8 +50,8 @@
           "$ref": "#/definitions/project" },
         "tags": {
           "$ref": "#/definitions/tags" },
-        "work": {
-          "$ref": "#/definitions/work" } },
+        "service": {
+          "$ref": "#/definitions/service" } },
       "required": [
         "approval",
         "client",
@@ -60,7 +60,7 @@
         "parties",
         "project",
         "tags",
-        "work" ],
+        "service" ],
       "additionalProperties": false } ],
 
   "definitions": {
@@ -177,7 +177,7 @@
       "type": "integer",
       "minimum": 1 },
 
-    "work": {
+    "service": {
       "type": "array",
       "items": {
         "oneOf": [
