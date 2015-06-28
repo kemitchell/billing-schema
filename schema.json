@@ -44,7 +44,7 @@
     "approval": {
       "title": "project approval",
       "properties": {
-        "by": { "type": "string" },
+        "by": { "$ref": "#/definitions/person" },
         "date": { "type": "string", "format": "date-time" },
         "method": {
           "type": "string",
@@ -52,7 +52,10 @@
       "required": [ "by", "date", "method" ],
       "additionalProperties": false },
 
-    "client": { "type": "string" },
+    "client": {
+      "title": "client name",
+      "type": "string",
+      "minLength": 1 },
 
     "completed": {
       "title": "date of completion",
@@ -63,26 +66,32 @@
       "title": "project contacts",
       "description": "client personnel involved in the project",
       "type": "array",
-      "items": { "type": "string" },
+      "items": { "$ref": "#/definitions/person" },
       "minItems": 1,
       "uniqueItems": true },
 
     "parties": {
       "title": "counterparties",
       "type": "array",
-      "items": { "type": "string" },
+      "items": { "type": "string", "minLength": 1},
       "uniqueItems": true},
 
     "project": {
       "title": "project title",
-      "type": "string" },
+      "type": "string",
+      "minLength": 1 },
 
     "tags": {
       "title": "project metadata tags",
       "type": "array",
-      "items": { "type": "string" },
+      "items": { "type": "string", "minLength": 1},
       "minItems": 1,
       "uniqueItems": true },
+
+    "person": {
+      "title": "name of a person",
+      "type": "string",
+      "minLength": 1 },
 
     "totalTimeEntry": {
       "title": "total time entry",
@@ -128,7 +137,7 @@
       "title": "narrative",
       "description": "list of tasks performed",
       "type": "array",
-      "items": { "type": "string" },
+      "items": { "type": "string", "minLength": 1},
       "minItems": 1,
       "uniqueItems": true },
 
