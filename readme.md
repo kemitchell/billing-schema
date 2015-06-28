@@ -1,3 +1,3 @@
-# Project Billing Entry Schema
+# @kemitchell/billing-schema
 
 JSON Schema for legal project billing entries
