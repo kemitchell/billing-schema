@@ -63,12 +63,16 @@
                   "type": "string" },
                 "minItems": 1,
                 "uniqueItems": true },
+              "rate": {
+                "type": "integer",
+                "minimum": 1 },
               "start": {
                 "type": "string",
                 "format": "date-time" } },
             "required": [
               "end",
               "narrative",
+              "rate",
               "start" ],
             "additionalProperties": false },
           { "type": "object",
@@ -84,11 +88,15 @@
                   "type": "string" },
                 "minItems": 1,
                 "uniqueItems": true },
+              "rate": {
+                "type": "integer",
+                "minimum": 1 },
               "time": {
                 "type": "number",
                 "multipleOf": 0.25,
                 "minimum": 0.25 } },
             "required": [
+              "rate",
               "time",
               "narrative" ],
             "additionalProperties": false } ] } } },
