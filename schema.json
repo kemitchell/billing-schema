@@ -4,14 +4,14 @@
 
   "oneOf": [
 
-    { "title": "hourly billing project",
+    { "title": "time billing project",
       "type": "object",
       "properties": {
         "approval": { "$ref": "#/definitions/approval" },
         "client": { "$ref": "#/definitions/client" },
         "completed": { "$ref": "#/definitions/completed" },
         "contacts": { "$ref": "#/definitions/contacts" },
-        "method": { "enum": [ "hourly" ] },
+        "method": { "enum": [ "time" ] },
         "parties": { "$ref": "#/definitions/parties" },
         "project": { "$ref": "#/definitions/project" },
         "service": { "$ref": "#/definitions/service" },
@@ -113,13 +113,11 @@
       "description": "entry of a span of time served",
       "type": "object",
       "properties": {
-        "adjustment": { "$ref": "#/definitions/adjustment" },
         "bill": { "$ref": "#/definitions/bill" },
-        "end": { "type": "string", "format": "date-time" },
         "narrative": { "$ref": "#/definitions/narrative" },
         "rate": { "$ref": "#/definitions/rate" },
-        "start": { "type": "string", "format": "date-time" } },
-      "required": [ "end", "narrative", "rate", "start" ],
+        "spans":  { "$ref": "#/definitions/span" } },
+      "required": [ "narrative", "rate", "spans" ],
       "additionalProperties": false },
 
     "adjustment": {
@@ -151,4 +149,16 @@
         "oneOf": [
           { "$ref": "#/definitions/startEndEntry" },
           { "$ref": "#/definitions/totalTimeEntry" } ] },
-      "minItems": 1 } } }
+      "minItems": 1 },
+
+    "span": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "adjustment": { "$ref": "#/definitions/adjustment" },
+          "end": { "type": "string", "format": "date-time" },
+          "start": { "type": "string", "format": "date-time" }
+        },
+        "required": [ "start", "end" ],
+        "additionalProperties": false } } } }
