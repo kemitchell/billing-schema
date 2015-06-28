@@ -1,4 +1,6 @@
-{ "oneOf": [
+{ "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "oneOf": [
 
     { "title": "hourly billing project",
       "type": "object",
