@@ -4,6 +4,7 @@
     "method": "e-mail" },
   "client": "NewCo, Inc.",
   "contacts": [ "John" ],
+  "completed": "2015-06-28",
   "method": "hourly",
   "parties": [ "OtherCo, Inc." ],
   "project": "incorporation",

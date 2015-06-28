@@ -5,6 +5,7 @@
       "properties": {
         "approval": { "$ref": "#/definitions/approval" },
         "client": { "$ref": "#/definitions/client" },
+        "completed": { "$ref": "#/definitions/completed" },
         "contacts": { "$ref": "#/definitions/contacts" },
         "method": { "enum": [ "hourly" ] },
         "parties": { "$ref": "#/definitions/parties" },
@@ -21,6 +22,7 @@
       "properties": {
         "approval": { "$ref": "#/definitions/approval" },
         "client": { "$ref": "#/definitions/client" },
+        "completed": { "$ref": "#/definitions/completed" },
         "contacts": { "$ref": "#/definitions/contacts" },
         "estimate": { "type": "integer", "minimum": 1 },
         "method": { "enum": [ "estimate" ] },
@@ -47,6 +49,11 @@
       "additionalProperties": false },
 
     "client": { "type": "string" },
+
+    "completed": {
+      "title": "date of completion",
+      "type": "string",
+      "format": "date-time" },
 
     "contacts": {
       "title": "project contacts",
