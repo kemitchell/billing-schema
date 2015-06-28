@@ -1,0 +1,57 @@
+{ "type": "object",
+  "properties": {
+    "approval": {
+      "properties": {
+        "by": {"type": "string"},
+        "date": {
+          "type": "string",
+          "format": "date-time"},
+        "method": {
+          "enum": ["e-mail", "GitHub issue", "conversation"]}}},
+    "client": {"type": "string"},
+    "contacts": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1,
+      "uniqueItems": true},
+    "method": {
+      "enum": ["hourly", "estimate", "flat"]},
+    "parties": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true},
+    "project": {"type": "string"},
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1,
+      "uniqueItems": true},
+    "work": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "adjustment": {"type": "integer"},
+          "bill": {"type": "boolean"},
+          "end": {
+            "type": "string",
+            "format": "date-time"},
+          "narrative": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 1,
+            "uniqueItems": true},
+          "start": {
+            "type": "string",
+            "format": "date-time"}},
+        "required": ["end", "narrative", "start"],
+        "additionalProperties": false}}},
+  "required": [
+    "approval",
+    "client",
+    "contacts",
+    "method",
+    "parties",
+    "project",
+    "tags"],
+  "additionalProperties": false}
