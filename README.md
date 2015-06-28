@@ -1,9 +1,9 @@
 JSON Schema for legal project billing entries
 
-```BASH
+```bash
 npm install @kemitchell/billing-schema
 ```
 
-```JavaScript
+```javascript
 var schema = require('@kemitchell/billing-schema')
 ```
