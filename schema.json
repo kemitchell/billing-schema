@@ -8,6 +8,10 @@
       "type": "object",
       "properties": {
         "approval": { "$ref": "#/definitions/approval" },
+        "cap": {
+          "type": "number",
+          "minimum": "0.25",
+          "multipleOf": 0.25 },
         "client": { "$ref": "#/definitions/client" },
         "completed": { "$ref": "#/definitions/completed" },
         "contacts": { "$ref": "#/definitions/contacts" },

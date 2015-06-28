@@ -6,6 +6,7 @@
   "contacts": [ "John" ],
   "completed": "2015-06-28",
   "method": "time",
+  "cap": 2.0,
   "parties": [ "OtherCo, Inc." ],
   "project": "incorporation",
   "tags": [ "structuring", "governance" ],
