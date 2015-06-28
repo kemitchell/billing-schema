@@ -38,26 +38,45 @@
     "work": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "adjustment": {
-            "type": "integer" },
-          "bill": {
-            "type": "boolean" },
-          "end": {
-            "type": "string",
-            "format": "date-time" },
-          "narrative": {
-            "type": "array",
-            "items": {
-              "type": "string" },
-            "minItems": 1,
-            "uniqueItems": true },
-          "start": {
-            "type": "string",
-            "format": "date-time"}},
-        "required": [ "end", "narrative", "start" ],
-        "additionalProperties": false } } },
+        "oneOf": [
+          { "type": "object",
+            "properties": {
+              "adjustment": {
+                "type": "integer" },
+              "bill": {
+                "type": "boolean" },
+              "end": {
+                "type": "string",
+                "format": "date-time" },
+              "narrative": {
+                "type": "array",
+                "items": {
+                  "type": "string" },
+                "minItems": 1,
+                "uniqueItems": true },
+              "start": {
+                "type": "string",
+                "format": "date-time"}},
+            "required": [ "end", "narrative", "start" ],
+            "additionalProperties": false },
+          { "type": "object",
+            "properties": {
+              "adjustment": {
+                "type": "integer" },
+              "bill": {
+                "type": "boolean" },
+              "narrative": {
+                "type": "array",
+                "items": {
+                  "type": "string" },
+                "minItems": 1,
+                "uniqueItems": true },
+              "time": {
+                "type": "integer",
+                "multipleOf": 0.25,
+                "minimum": 0.25 } },
+            "required": [ "time", "narrative" ],
+            "additionalProperties": false } ] } } },
   "required": [
     "approval",
     "client",
