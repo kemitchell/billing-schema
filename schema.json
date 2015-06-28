@@ -1,5 +1,7 @@
 { "$schema": "http://json-schema.org/draft-04/schema#",
 
+  "title": "legal project billing record",
+
   "oneOf": [
 
     { "title": "hourly billing project",
