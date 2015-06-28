@@ -9,8 +9,14 @@
           "format": "date-time" },
         "method": {
           "type": "string",
-          "enum": [ "e-mail", "GitHub", "conversation" ] } },
-      "required": [ "by", "date", "method" ],
+          "enum": [
+            "e-mail",
+            "GitHub",
+            "conversation" ] } },
+      "required": [
+        "by",
+        "date",
+        "method" ],
       "additionalProperties": false },
     "client": {
       "type": "string"},
@@ -21,7 +27,10 @@
       "minItems": 1,
       "uniqueItems": true },
     "method": {
-      "enum": [ "hourly", "estimate", "flat" ] },
+      "enum": [
+        "hourly",
+        "estimate",
+        "flat" ] },
     "parties": {
       "type": "array",
       "items": {
@@ -56,8 +65,11 @@
                 "uniqueItems": true },
               "start": {
                 "type": "string",
-                "format": "date-time"}},
-            "required": [ "end", "narrative", "start" ],
+                "format": "date-time" } },
+            "required": [
+              "end",
+              "narrative",
+              "start" ],
             "additionalProperties": false },
           { "type": "object",
             "properties": {
@@ -76,7 +88,9 @@
                 "type": "number",
                 "multipleOf": 0.25,
                 "minimum": 0.25 } },
-            "required": [ "time", "narrative" ],
+            "required": [
+              "time",
+              "narrative" ],
             "additionalProperties": false } ] } } },
   "required": [
     "approval",
