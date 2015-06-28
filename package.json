@@ -1,6 +1,6 @@
 {
   "name": "@kemitchell/billing-schema",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "JSON Schema for legal project billing entries",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com/)",
   "repository": "kemitchell/billing-schema",
