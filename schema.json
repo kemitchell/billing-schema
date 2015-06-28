@@ -118,6 +118,9 @@
           "multipleOf": 0.25 },
         "bill": {
           "type": "boolean" },
+        "date": {
+          "type": "string",
+          "format": "date-time" },
         "narrative": {
           "type": "array",
           "items": {
@@ -132,6 +135,7 @@
           "multipleOf": 0.25,
           "minimum": 0.25 } },
       "required": [
+        "date",
         "rate",
         "time",
         "narrative" ],
