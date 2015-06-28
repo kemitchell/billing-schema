@@ -114,22 +114,16 @@
       "type": "object",
       "properties": {
         "adjustment": {
-          "type": "number",
-          "multipleOf": 0.25 },
+          "$ref": "#/definitions/adjustment" },
         "bill": {
-          "type": "boolean" },
+          "$ref": "#/definitions/bill" },
         "date": {
           "type": "string",
           "format": "date-time" },
         "narrative": {
-          "type": "array",
-          "items": {
-            "type": "string" },
-          "minItems": 1,
-          "uniqueItems": true },
+          "$ref": "#/definitions/narrative" },
         "rate": {
-          "type": "integer",
-          "minimum": 1 },
+          "$ref": "#/definitions/rate" },
         "time": {
           "type": "number",
           "multipleOf": 0.25,
@@ -145,21 +139,16 @@
       "type": "object",
       "properties": {
         "adjustment": {
-          "type": "integer" },
+          "$ref": "#/definitions/adjustment" },
         "bill": {
-          "type": "boolean" },
+          "$ref": "#/definitions/bill" },
         "end": {
           "type": "string",
           "format": "date-time" },
         "narrative": {
-          "type": "array",
-          "items": {
-            "type": "string" },
-          "minItems": 1,
-          "uniqueItems": true },
+          "$ref": "#/definitions/narrative" },
         "rate": {
-          "type": "integer",
-          "minimum": 1 },
+          "$ref": "#/definitions/rate" },
         "start": {
           "type": "string",
           "format": "date-time" } },
@@ -169,6 +158,24 @@
         "rate",
         "start" ],
       "additionalProperties": false },
+
+    "adjustment": {
+      "type": "number",
+      "multipleOf": 0.25 },
+
+    "bill": {
+      "type": "boolean" },
+
+    "narrative": {
+      "type": "array",
+      "items": {
+        "type": "string" },
+      "minItems": 1,
+      "uniqueItems": true },
+
+    "rate": {
+      "type": "integer",
+      "minimum": 1 },
 
     "work": {
       "type": "array",
