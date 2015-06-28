@@ -1,3 +1,4 @@
 .npmignore
-example.json
+estimate-example.json
+hourly-example.json
 test.js

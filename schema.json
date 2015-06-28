@@ -1,5 +1,70 @@
-{ "type": "object",
-  "properties": {
+{ "oneOf": [
+
+    { "type": "object",
+      "properties": {
+        "approval": {
+          "$ref": "#/definitions/approval" },
+        "client": {
+          "$ref": "#/definitions/client" },
+        "contacts": {
+          "$ref": "#/definitions/contacts" },
+        "method": {
+          "enum": [
+            "hourly" ] },
+        "parties": {
+          "$ref": "#/definitions/parties" },
+        "project": {
+          "$ref": "#/definitions/project" },
+        "tags": {
+          "$ref": "#/definitions/tags" },
+        "work": {
+          "$ref": "#/definitions/work" } },
+      "required": [
+        "approval",
+        "client",
+        "contacts",
+        "method",
+        "parties",
+        "project",
+        "tags",
+        "work" ],
+      "additionalProperties": false },
+
+    { "type": "object",
+      "properties": {
+        "approval": {
+          "$ref": "#/definitions/approval" },
+        "client": {
+          "$ref": "#/definitions/client" },
+        "contacts": {
+          "$ref": "#/definitions/contacts" },
+        "estimate": {
+          "type": "integer",
+          "minimum": 1 },
+        "method": {
+          "enum": [
+            "estimate" ] },
+        "parties": {
+          "$ref": "#/definitions/parties" },
+        "project": {
+          "$ref": "#/definitions/project" },
+        "tags": {
+          "$ref": "#/definitions/tags" },
+        "work": {
+          "$ref": "#/definitions/work" } },
+      "required": [
+        "approval",
+        "client",
+        "contacts",
+        "method",
+        "parties",
+        "project",
+        "tags",
+        "work" ],
+      "additionalProperties": false } ],
+
+  "definitions": {
+
     "approval": {
       "properties": {
         "by": {
@@ -18,94 +83,93 @@
         "date",
         "method" ],
       "additionalProperties": false },
+
     "client": {
-      "type": "string"},
+      "type": "string" },
+
     "contacts": {
       "type": "array",
       "items": {
         "type": "string" },
       "minItems": 1,
       "uniqueItems": true },
-    "method": {
-      "enum": [
-        "hourly",
-        "estimate",
-        "flat" ] },
+
     "parties": {
       "type": "array",
       "items": {
         "type": "string" },
       "uniqueItems": true},
+
     "project": {
       "type": "string" },
+
     "tags": {
       "type": "array",
       "items": {
         "type": "string" },
       "minItems": 1,
       "uniqueItems": true },
+
+    "startEndEntry": {
+      "type": "object",
+      "properties": {
+        "adjustment": {
+          "type": "number",
+          "multipleOf": 0.25 },
+        "bill": {
+          "type": "boolean" },
+        "narrative": {
+          "type": "array",
+          "items": {
+            "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true },
+        "rate": {
+          "type": "integer",
+          "minimum": 1 },
+        "time": {
+          "type": "number",
+          "multipleOf": 0.25,
+          "minimum": 0.25 } },
+      "required": [
+        "rate",
+        "time",
+        "narrative" ],
+      "additionalProperties": false },
+
+    "timeEntry": {
+      "type": "object",
+      "properties": {
+        "adjustment": {
+          "type": "integer" },
+        "bill": {
+          "type": "boolean" },
+        "end": {
+          "type": "string",
+          "format": "date-time" },
+        "narrative": {
+          "type": "array",
+          "items": {
+            "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true },
+        "rate": {
+          "type": "integer",
+          "minimum": 1 },
+        "start": {
+          "type": "string",
+          "format": "date-time" } },
+      "required": [
+        "end",
+        "narrative",
+        "rate",
+        "start" ],
+      "additionalProperties": false },
+
     "work": {
       "type": "array",
       "items": {
         "oneOf": [
-          { "type": "object",
-            "properties": {
-              "adjustment": {
-                "type": "integer" },
-              "bill": {
-                "type": "boolean" },
-              "end": {
-                "type": "string",
-                "format": "date-time" },
-              "narrative": {
-                "type": "array",
-                "items": {
-                  "type": "string" },
-                "minItems": 1,
-                "uniqueItems": true },
-              "rate": {
-                "type": "integer",
-                "minimum": 1 },
-              "start": {
-                "type": "string",
-                "format": "date-time" } },
-            "required": [
-              "end",
-              "narrative",
-              "rate",
-              "start" ],
-            "additionalProperties": false },
-          { "type": "object",
-            "properties": {
-              "adjustment": {
-                "type": "number",
-                "multipleOf": 0.25 },
-              "bill": {
-                "type": "boolean" },
-              "narrative": {
-                "type": "array",
-                "items": {
-                  "type": "string" },
-                "minItems": 1,
-                "uniqueItems": true },
-              "rate": {
-                "type": "integer",
-                "minimum": 1 },
-              "time": {
-                "type": "number",
-                "multipleOf": 0.25,
-                "minimum": 0.25 } },
-            "required": [
-              "rate",
-              "time",
-              "narrative" ],
-            "additionalProperties": false } ] } } },
-  "required": [
-    "approval",
-    "client",
-    "contacts",
-    "method",
-    "parties",
-    "project",
-    "tags" ],
-  "additionalProperties": false }
+          { "$ref": "#/definitions/timeEntry" },
+          { "$ref": "#/definitions/startEndEntry" } ] },
+      "minItems": 1 } } }
