@@ -1,6 +1,15 @@
-{ "name": "@kemitchell/billing-schema",
+{
+  "name": "@kemitchell/billing-schema",
   "version": "0.0.0",
   "description": "JSON Schema for legal project billing entries",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com/)",
   "repository": "kemitchell/billing-schema",
-  "license": "Apache-2.0"}
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "tape": "4.x",
+    "tv4": "~1.1.12"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  }
+}

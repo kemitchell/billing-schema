@@ -2,50 +2,62 @@
   "properties": {
     "approval": {
       "properties": {
-        "by": {"type": "string"},
+        "by": {
+          "type": "string" },
         "date": {
           "type": "string",
-          "format": "date-time"},
+          "format": "date-time" },
         "method": {
-          "enum": ["e-mail", "GitHub issue", "conversation"]}}},
-    "client": {"type": "string"},
+          "type": "string",
+          "enum": [ "e-mail", "GitHub", "conversation" ] } },
+      "required": [ "by", "date", "method" ],
+      "additionalProperties": false },
+    "client": {
+      "type": "string"},
     "contacts": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string" },
       "minItems": 1,
-      "uniqueItems": true},
+      "uniqueItems": true },
     "method": {
-      "enum": ["hourly", "estimate", "flat"]},
+      "enum": [ "hourly", "estimate", "flat" ] },
     "parties": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string" },
       "uniqueItems": true},
-    "project": {"type": "string"},
+    "project": {
+      "type": "string" },
     "tags": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string" },
       "minItems": 1,
-      "uniqueItems": true},
+      "uniqueItems": true },
     "work": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "adjustment": {"type": "integer"},
-          "bill": {"type": "boolean"},
+          "adjustment": {
+            "type": "integer" },
+          "bill": {
+            "type": "boolean" },
           "end": {
             "type": "string",
-            "format": "date-time"},
+            "format": "date-time" },
           "narrative": {
             "type": "array",
-            "items": {"type": "string"},
+            "items": {
+              "type": "string" },
             "minItems": 1,
-            "uniqueItems": true},
+            "uniqueItems": true },
           "start": {
             "type": "string",
             "format": "date-time"}},
-        "required": ["end", "narrative", "start"],
-        "additionalProperties": false}}},
+        "required": [ "end", "narrative", "start" ],
+        "additionalProperties": false } } },
   "required": [
     "approval",
     "client",
@@ -53,5 +65,5 @@
     "method",
     "parties",
     "project",
-    "tags"],
-  "additionalProperties": false}
+    "tags" ],
+  "additionalProperties": false }
