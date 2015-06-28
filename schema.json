@@ -62,7 +62,8 @@
           { "type": "object",
             "properties": {
               "adjustment": {
-                "type": "integer" },
+                "type": "number",
+                "multipleOf": 0.25 },
               "bill": {
                 "type": "boolean" },
               "narrative": {
