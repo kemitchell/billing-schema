@@ -9,7 +9,7 @@
   "project": "incorporation",
   "tags": [ "structuring", "governance" ],
   "work": [
-    { "time": 60,
+    { "time": 60.25,
       "narrative": [ "prepared incorporation documents" ],
       "adjustment": -10 },
     { "start": "2015-06-27 10:00",

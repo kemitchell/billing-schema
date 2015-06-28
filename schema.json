@@ -72,7 +72,7 @@
                 "minItems": 1,
                 "uniqueItems": true },
               "time": {
-                "type": "integer",
+                "type": "number",
                 "multipleOf": 0.25,
                 "minimum": 0.25 } },
             "required": [ "time", "narrative" ],
