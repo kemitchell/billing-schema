@@ -110,7 +110,7 @@
       "minItems": 1,
       "uniqueItems": true },
 
-    "startEndEntry": {
+    "timeEntry": {
       "type": "object",
       "properties": {
         "adjustment": {
@@ -137,7 +137,7 @@
         "narrative" ],
       "additionalProperties": false },
 
-    "timeEntry": {
+    "startEndEntry": {
       "type": "object",
       "properties": {
         "adjustment": {
