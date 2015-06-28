@@ -46,9 +46,7 @@
       "properties": {
         "by": { "$ref": "#/definitions/person" },
         "date": { "type": "string", "format": "date-time" },
-        "method": {
-          "type": "string",
-          "enum": [ "e-mail", "GitHub", "conversation" ] } },
+        "method": { "enum": [ "e-mail", "GitHub", "conversation" ] } },
       "required": [ "by", "date", "method" ],
       "additionalProperties": false },
 
