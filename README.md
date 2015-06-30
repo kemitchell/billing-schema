@@ -1,6 +1,6 @@
 JSON Schema for legal project billing entries
 
-```bash
+```shellsession
 npm install @kemitchell/billing-schema
 ```
 
