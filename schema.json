@@ -21,7 +21,7 @@
         "service": { "$ref": "#/definitions/service" },
         "tags": { "$ref": "#/definitions/tags" } },
       "required": [
-        "approval", "client", "contacts", "method", "parties",
+        "client", "contacts", "method", "parties",
         "project", "service", "tags" ],
       "additionalProperties": false },
 
@@ -39,7 +39,7 @@
         "service": { "$ref": "#/definitions/service" },
         "tags": { "$ref": "#/definitions/tags" } },
       "required": [
-        "approval", "client", "contacts", "method", "parties",
+        "client", "contacts", "method", "parties",
         "project", "service", "tags" ],
       "additionalProperties": false } ],
 
