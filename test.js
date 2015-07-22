@@ -1,6 +1,6 @@
 var tv4 = require('tv4')
 
-var schema = require('./schema')
+var schema = require('./')
 
 require('tape')(function(test) {
 
