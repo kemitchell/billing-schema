@@ -27,7 +27,7 @@
       "$ref": "#/definitions/service" },
     "tags": {
       "$ref": "#/definitions/tags" } },
-  "required": [ "client", "contacts", "method", "parties", "project", "service", "tags" ],
+  "required": [ "client", "contacts", "method", "project", "service" ],
   "additionalProperties": false,
   "definitions": {
     "approval": {
