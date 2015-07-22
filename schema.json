@@ -1,151 +1,143 @@
 { "$schema": "http://json-schema.org/draft-04/schema#",
-
   "title": "legal project billing record",
-
-  "oneOf": [
-
-    { "title": "time billing project",
-      "type": "object",
-      "properties": {
-        "approval": { "$ref": "#/definitions/approval" },
-        "cap": {
-          "title": "dollar-amount cap",
-          "type": "integer",
-          "minimum": "0" },
-        "client": { "$ref": "#/definitions/client" },
-        "completed": { "$ref": "#/definitions/completed" },
-        "contacts": { "$ref": "#/definitions/contacts" },
-        "method": { "enum": [ "time" ] },
-        "parties": { "$ref": "#/definitions/parties" },
-        "project": { "$ref": "#/definitions/project" },
-        "service": { "$ref": "#/definitions/service" },
-        "tags": { "$ref": "#/definitions/tags" } },
-      "required": [
-        "client", "contacts", "method", "parties",
-        "project", "service", "tags" ],
-      "additionalProperties": false },
-
-    { "title": "estimated project",
-      "type": "object",
-      "properties": {
-        "approval": { "$ref": "#/definitions/approval" },
-        "client": { "$ref": "#/definitions/client" },
-        "completed": { "$ref": "#/definitions/completed" },
-        "contacts": { "$ref": "#/definitions/contacts" },
-        "estimate": { "type": "integer", "minimum": 1 },
-        "method": { "enum": [ "estimate" ] },
-        "parties": { "$ref": "#/definitions/parties" },
-        "project": { "$ref": "#/definitions/project" },
-        "service": { "$ref": "#/definitions/service" },
-        "tags": { "$ref": "#/definitions/tags" } },
-      "required": [
-        "client", "contacts", "method", "parties",
-        "project", "service", "tags" ],
-      "additionalProperties": false } ],
-
+  "type": "object",
+  "properties": {
+    "approval": {
+      "$ref": "#/definitions/approval" },
+    "cap": {
+      "title": "dollar-amount cap",
+      "type": "integer",
+      "minimum": "0" },
+    "client": {
+      "$ref": "#/definitions/client" },
+    "completed": {
+      "$ref": "#/definitions/completed" },
+    "contacts": {
+      "$ref": "#/definitions/contacts" },
+    "estimate": {
+      "type": "integer",
+      "minimum": 1 },
+    "method": {
+      "enum": [ "time", "estimate" ] },
+    "parties": {
+      "$ref": "#/definitions/parties" },
+    "project": {
+      "$ref": "#/definitions/project" },
+    "service": {
+      "$ref": "#/definitions/service" },
+    "tags": {
+      "$ref": "#/definitions/tags" } },
+  "required": [ "client", "contacts", "method", "parties", "project", "service", "tags" ],
+  "additionalProperties": false,
   "definitions": {
-
     "approval": {
       "title": "project approval",
       "properties": {
-        "by": { "$ref": "#/definitions/person" },
-        "date": { "type": "string", "format": "date-time" },
-        "method": { "enum": [ "e-mail", "GitHub", "conversation" ] } },
+        "by": {
+          "$ref": "#/definitions/person" },
+        "date": {
+          "type": "string",
+          "format": "date-time" },
+        "method": {
+          "enum": [ "e-mail", "GitHub", "conversation" ] } },
       "required": [ "by", "date", "method" ],
       "additionalProperties": false },
-
     "client": {
       "title": "client name",
       "type": "string",
       "minLength": 1 },
-
     "completed": {
       "title": "date of completion",
       "type": "string",
       "format": "date-time" },
-
     "contacts": {
       "title": "project contacts",
       "description": "client personnel involved in the project",
       "type": "array",
-      "items": { "$ref": "#/definitions/person" },
+      "items": {
+        "$ref": "#/definitions/person" },
       "minItems": 1,
       "uniqueItems": true },
-
     "parties": {
       "title": "counterparties",
       "type": "array",
-      "items": { "type": "string", "minLength": 1},
-      "uniqueItems": true},
-
+      "items": {
+        "type": "string",
+        "minLength": 1 },
+      "uniqueItems": true },
     "project": {
       "title": "project title",
       "type": "string",
       "minLength": 1 },
-
     "tags": {
       "title": "project metadata tags",
       "type": "array",
-      "items": { "type": "string", "minLength": 1},
+      "items": {
+        "type": "string",
+        "minLength": 1 },
       "minItems": 1,
       "uniqueItems": true },
-
     "person": {
       "title": "name of a person",
       "type": "string",
       "minLength": 1 },
-
     "totalTimeEntry": {
       "title": "total time entry",
       "description": "entry of total time served",
       "type": "object",
       "properties": {
-        "adjustment": { "$ref": "#/definitions/adjustment" },
-        "bill": { "$ref": "#/definitions/bill" },
-        "date": { "type": "string", "format": "date-time" },
-        "narrative": { "$ref": "#/definitions/narrative" },
-        "rate": { "$ref": "#/definitions/rate" },
+        "adjustment": {
+          "$ref": "#/definitions/adjustment" },
+        "bill": {
+          "$ref": "#/definitions/bill" },
+        "date": {
+          "type": "string",
+          "format": "date-time" },
+        "narrative": {
+          "$ref": "#/definitions/narrative" },
+        "rate": {
+          "$ref": "#/definitions/rate" },
         "time": {
           "type": "number",
           "multipleOf": 0.25,
           "minimum": 0.25 } },
       "required": [ "date", "narrative", "rate", "time" ],
       "additionalProperties": false },
-
     "startEndEntry": {
       "title": "time span entry",
       "description": "entry of a span of time served",
       "type": "object",
       "properties": {
-        "bill": { "$ref": "#/definitions/bill" },
-        "narrative": { "$ref": "#/definitions/narrative" },
-        "rate": { "$ref": "#/definitions/rate" },
-        "spans":  { "$ref": "#/definitions/span" } },
+        "bill": {
+          "$ref": "#/definitions/bill" },
+        "narrative": {
+          "$ref": "#/definitions/narrative" },
+        "rate": {
+          "$ref": "#/definitions/rate" },
+        "spans": {
+          "$ref": "#/definitions/span" } },
       "required": [ "narrative", "rate", "spans" ],
       "additionalProperties": false },
-
     "adjustment": {
       "title": "time entry manual adjustment",
       "type": "number",
       "multipleOf": 0.25 },
-
     "bill": {
       "description": "whether to bill for an entry",
       "type": "boolean" },
-
     "narrative": {
       "title": "narrative",
       "description": "list of tasks performed",
       "type": "array",
-      "items": { "type": "string", "minLength": 1},
+      "items": {
+        "type": "string",
+        "minLength": 1 },
       "minItems": 1,
       "uniqueItems": true },
-
     "rate": {
       "title": "billing rate",
       "type": "integer",
       "minimum": 1 },
-
     "service": {
       "title": "list of service entries",
       "type": "array",
@@ -153,15 +145,18 @@
         "oneOf": [
           { "$ref": "#/definitions/startEndEntry" },
           { "$ref": "#/definitions/totalTimeEntry" } ] } },
-
     "span": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "adjustment": { "$ref": "#/definitions/adjustment" },
-          "end": { "type": "string", "format": "date-time" },
-          "start": { "type": "string", "format": "date-time" }
-        },
+          "adjustment": {
+            "$ref": "#/definitions/adjustment" },
+          "end": {
+            "type": "string",
+            "format": "date-time" },
+          "start": {
+            "type": "string",
+            "format": "date-time" } },
         "required": [ "start", "end" ],
         "additionalProperties": false } } } }
