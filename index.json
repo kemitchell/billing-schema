@@ -81,7 +81,7 @@
       "title": "name of a person",
       "type": "string",
       "minLength": 1 },
-    "totalTimeEntry": {
+    "entry": {
       "title": "total time entry",
       "description": "entry of total time served",
       "type": "object",
@@ -100,23 +100,10 @@
         "time": {
           "type": "number",
           "multipleOf": 0.25,
-          "minimum": 0.25 } },
-      "required": [ "date", "narrative", "rate", "time" ],
-      "additionalProperties": false },
-    "startEndEntry": {
-      "title": "time span entry",
-      "description": "entry of a span of time served",
-      "type": "object",
-      "properties": {
-        "bill": {
-          "$ref": "#/definitions/bill" },
-        "narrative": {
-          "$ref": "#/definitions/narrative" },
-        "rate": {
-          "$ref": "#/definitions/rate" },
+          "minimum": 0.25 },
         "spans": {
           "$ref": "#/definitions/span" } },
-      "required": [ "narrative", "rate", "spans" ],
+      "required": [ "narrative", "rate" ],
       "additionalProperties": false },
     "adjustment": {
       "title": "time entry manual adjustment",
@@ -142,9 +129,7 @@
       "title": "list of service entries",
       "type": "array",
       "items": {
-        "oneOf": [
-          { "$ref": "#/definitions/startEndEntry" },
-          { "$ref": "#/definitions/totalTimeEntry" } ] } },
+        "$ref": "#/definitions/entry" } },
     "span": {
       "type": "array",
       "items": {
