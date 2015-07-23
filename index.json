@@ -103,7 +103,7 @@
           "minimum": 0.25 },
         "spans": {
           "$ref": "#/definitions/span" } },
-      "required": [ "narrative", "rate" ],
+      "required": [ "narrative" ],
       "additionalProperties": false },
     "adjustment": {
       "title": "time entry manual adjustment",
