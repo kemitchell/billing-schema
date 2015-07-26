@@ -88,8 +88,6 @@
       "properties": {
         "adjustment": {
           "$ref": "#/definitions/adjustment" },
-        "bill": {
-          "$ref": "#/definitions/bill" },
         "date": {
           "type": "string",
           "format": "date-time" },
@@ -109,9 +107,6 @@
       "title": "time entry manual adjustment",
       "type": "number",
       "multipleOf": 0.25 },
-    "bill": {
-      "description": "whether to bill for an entry",
-      "type": "boolean" },
     "narrative": {
       "title": "narrative",
       "description": "list of tasks performed",
@@ -124,7 +119,7 @@
     "rate": {
       "title": "billing rate",
       "type": "integer",
-      "minimum": 1 },
+      "minimum": 0 },
     "service": {
       "title": "list of service entries",
       "type": "array",
