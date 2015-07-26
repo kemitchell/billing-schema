@@ -93,8 +93,6 @@
           "format": "date-time" },
         "narrative": {
           "$ref": "#/definitions/narrative" },
-        "rate": {
-          "$ref": "#/definitions/rate" },
         "time": {
           "type": "number",
           "multipleOf": 0.25,
@@ -116,10 +114,6 @@
         "minLength": 1 },
       "minItems": 1,
       "uniqueItems": true },
-    "rate": {
-      "title": "billing rate",
-      "type": "integer",
-      "minimum": 0 },
     "service": {
       "title": "list of service entries",
       "type": "array",
