@@ -3,20 +3,15 @@
     "date": "2015-06-27",
     "method": "e-mail" },
   "client": "NewCo, Inc.",
-  "contacts": [
-    "John" ],
-  "method": "estimate",
-  "estimate": 100,
-  "parties": [
-    "OtherCo, Inc." ],
+  "contacts": [ "John" ],
+  "limit": {
+    "type": "estimate",
+    "amount": 100 },
+  "parties": [ "OtherCo, Inc." ],
   "project": "incorporation",
-  "tags": [
-    "structuring",
-    "governance" ],
+  "tags": [ "structuring", "governance" ],
   "service": [
     { "time": 1.25,
       "date": "2015-06-27",
-      "rate": 300,
-      "narrative": [
-        "prepared incorporation documents" ],
+      "narrative": [ "prepared incorporation documents" ],
       "adjustment": -10.5 } ] }
