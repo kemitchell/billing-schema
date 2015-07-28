@@ -4,21 +4,19 @@
   "properties": {
     "approval": {
       "$ref": "#/definitions/approval" },
-    "cap": {
-      "title": "dollar-amount cap",
-      "type": "integer",
-      "minimum": "0" },
     "client": {
       "$ref": "#/definitions/client" },
     "completed": {
       "$ref": "#/definitions/completed" },
     "contacts": {
       "$ref": "#/definitions/contacts" },
-    "estimate": {
-      "type": "integer",
-      "minimum": 1 },
-    "method": {
-      "enum": [ "time", "estimate" ] },
+    "limit": {
+      "properties": {
+        "type": {
+          "enum": [ "cap", "estimate" ] },
+        "amount": {
+          "type": "integer",
+          "minimum": 0 } } },
     "parties": {
       "$ref": "#/definitions/parties" },
     "project": {
@@ -27,7 +25,7 @@
       "$ref": "#/definitions/service" },
     "tags": {
       "$ref": "#/definitions/tags" } },
-  "required": [ "client", "contacts", "method", "project", "service" ],
+  "required": [ "client", "contacts", "project", "service" ],
   "additionalProperties": false,
   "definitions": {
     "approval": {
