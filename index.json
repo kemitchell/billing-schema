@@ -17,6 +17,10 @@
         "amount": {
           "type": "integer",
           "minimum": 0 } } },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string" } },
     "parties": {
       "$ref": "#/definitions/parties" },
     "project": {
